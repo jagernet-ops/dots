@@ -25,7 +25,6 @@ return require("packer").startup(function(use)
 		  -- LSP Support
 		  {"neovim/nvim-lspconfig"},
 		  -- Autocompletion
-		  {"hrsh7th/nvim-cmp"},
 		  {"hrsh7th/cmp-nvim-lsp"},
 		  {"L3MON4D3/LuaSnip"},
 	  }
@@ -36,5 +35,11 @@ return require("packer").startup(function(use)
 	  run = function() vim.fn["mkdp#util#install"]() end,
   })
   use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+  use "f-person/git-blame.nvim"
+  use "m4xshen/autoclose.nvim"
+  use "rafamadriz/friendly-snippets"
+  use { "L3MON4D3/LuaSnip" }
+	use { "hrsh7th/nvim-cmp" }
+  use { "saadparwaiz1/cmp_luasnip" }
 
 end)
